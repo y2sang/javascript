@@ -1,0 +1,7 @@
+{
+    "items" : [
+        { "name" : "홍길동1", "age" : 35, "email" : "kdong1@test.com"},
+        { "name" : "홍길동2", "age" : 25, "email" : "kdong2@test.com"},
+        { "name" : "홍길동3", "age" : 15, "email" : "kdong3@test.com"},
+    ]
+}

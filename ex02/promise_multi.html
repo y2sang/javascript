@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="
+    fnProductReady(1, 2000).then(pResponse => { console.log(pResponse); return fnProductReady(2, 1000);})
+    .then(pResponse2 => { console.log(pResponse2); return fnProductReady(3, 500);})
+    .then(pResponse3 => console.log(pResponse3));">
+        Promise test start!</button>
+
+<script>
+    function fnProductReady(pNum, pTime) {
+        return new Promise((fnResolve) => {
+            setTimeout(() => {
+                console.log(pNum);
+                fnResolve("Successfully loaded");
+            }, pTime)
+        });
+    }
+</script>
+</body>
+</html>
