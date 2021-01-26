@@ -21,6 +21,14 @@
             }, pTime)
         });
     }
+
+    async function fnDoAsyncFunc() {
+        console.log(await fnProductReady(1, 2000));
+        console.log(await fnProductReady(2, 1000));
+        console.log(await fnProductReady(3, 500));
+        
+    }
+    fnDoAsyncFunc();
 </script>
 </body>
 </html>
