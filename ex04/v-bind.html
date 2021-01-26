@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .blue_style { color: blue}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 v-bind:class="sColorName + '_style'"> 안녕하세요!</h1>
+        <input :value="sDate">
+        <p>{{ sMsg }}</p>
+        <input v-model:value="sMsg">
+        <h1> {{ bFlag }} </h1>
+        <p v-if="bFlag == true">앞면!</p>
+        <p v-else>뒷면!</p>
+        <ol>
+            <li v-for="item in itemList">
+                {{item.name}}
+            </li>
+        </ol>
+        <h1> {{ sTitle }} </h1>
+        <button @click="fnChangeTitle">Click me!</button>
+    </div>
+    <script>
+        let app = new Vue({
+            el: '#main',
+            data: {
+                sDate: '올해 연도 : ' + new Date().getFullYear(),
+                sColorName : 'blue',
+                sMsg: 'HI~!',
+                bFlag : Math.random() > 0.5,
+                itemList : [
+                    { name : 'A'},
+                    { name : 'B'},
+                    { name : 'C'}
+                    
+                ],
+                sTitle: "네 이름이 뭐야"
+            },
+            methods: {
+                fnChangeTitle() {
+                    this.sTitle = 'What is your name'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
