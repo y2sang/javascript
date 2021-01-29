@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .blue_style { color: blue}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p> 클릭 숫자: {{ nClicks }}</p>
+        <p> 카운트다운: {{ fnCounter }}</p>
+        <button @click="fnIncrement">Click me!</button>
+    </div>
+    <script>
+        let app = new Vue({
+            el: '#main',
+            data: {
+                nClicks: 0
+            },
+            computed: {
+                fnCounter() {
+                    return 10 - this.nClicks;
+                }
+            },
+            methods: {
+                fnIncrement() {
+                    this.nClicks++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        Vue.component('favorite-fruits', {
+            props: ['fruit'],
+            template: '<li>{{ fruit.sFruit_name }}</li>'
+        })
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h1>{{ sTitle }}</h1>
+        <ol>
+            <favorite-fruits v-for="item in aFruits" v-bind:fruit="item" v-bind:key="item.id" />
+        </ol>
+        <favorite-fruits fruit="aFruits"></favorite-fruits>
+    </div> 
+    <script>
+        
+        let app = new Vue({
+            el: '#main',
+            data: {
+                sTitle: '안녕!'
+                , aFruits: [
+                        {id: 0, sFruit_name: '사과'},
+                        {id: 1, sFruit_name: '오렌지'},
+                        {id: 2, sFruit_name: '수박'}
+                    ]
+            }
+        })
+    </script>
+</body>
+</html>
