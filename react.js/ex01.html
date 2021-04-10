@@ -6,13 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const schools = [
-            'Yorktown',
-            'Washington & Lee',
-            'Wakefield'
+        let schools = [
+            { name: 'Yorktown'},
+            { name: 'Stratford'},
+            { name: 'Washington & Lee'},
+            { name: 'Wakefield'},
         ]
-        const highSchools = schools.map(school => ({ name: school}))
-        console.log(highSchools)
+
+        const editName = (oldName, name, arr) =>
+            arr.map(item => {
+                if(item.name === oldName){
+                    return {
+                        ...item, name
+                    }
+                } else {
+                    return item
+                }
+            })
+
+        let updatedSchools = editName('Stratford', 'HB Woodlawn', schools)
+
+        console.log(updatedSchools[1])
+        console.log(schools[1])
+
+        
+
+        
+        
 
     </script>
 </head>
