@@ -7,31 +7,26 @@
     <title>Document</title>
     <script>
         let schools = [
-            { name: 'Yorktown'},
-            { name: 'Stratford'},
-            { name: 'Washington & Lee'},
-            { name: 'Wakefield'},
+            { 'Yorktown': 10},
+            { 'Stratford': 1},
+            { 'Washington & Lee': 2},
+            { 'Wakefield': 5},
         ]
-
-        const editName = (oldName, name, arr) =>
-            arr.map(item => {
-                if(item.name === oldName){
-                    return {
-                        ...item, name
-                    }
-                } else {
-                    return item
+        let result = []
+        const schoolArray = Object.keys(schools).map(
+            idx => (Object.keys(schools[idx]) ).map(key => (
+                {
+                    name: key, 
+                    wins: schools[idx][key]
                 }
-            })
-        const editNth = (n, name, arr) =>
-            arr.map(
-                (item, i) => (i === n) ? ({...item, name}) : item
-            )
+            ))
+        ).map(key => (
+            key[0]
+        ))
 
-        let updateSchools2 = editNth(2, "Mansfield", schools)
+            
 
-        console.log(updateSchools2[2])
-        console.log(schools[2])
+        console.log(schoolArray)
 
         
 
