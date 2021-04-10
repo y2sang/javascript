@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let schools = [
+            { name: 'Yorktown'},
+            { name: 'Stratford'},
+            { name: 'Washington & Lee'},
+            { name: 'Wakefield'},
+        ]
+
+        const editName = (oldName, name, arr) =>
+            arr.map(item => {
+                if(item.name === oldName){
+                    return {
+                        ...item, name
+                    }
+                } else {
+                    return item
+                }
+            })
+        const editNth = (n, name, arr) =>
+            arr.map(
+                (item, i) => (i === n) ? ({...item, name}) : item
+            )
+
+        let updateSchools2 = editNth(2, "Mansfield", schools)
+
+        console.log(updateSchools2[2])
+        console.log(schools[2])
+
+        
+
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
